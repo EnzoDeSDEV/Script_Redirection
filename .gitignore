@@ -1,2 +1,2 @@
-liens_redirections_VDN.csv
-rewrite_rules.txt
+*.csv
+*.txt
