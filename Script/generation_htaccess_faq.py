@@ -5,10 +5,10 @@ other_page = []
 redirection_faq = []
 redirection= []
 delimiter = ";"
-with open('liens_redirections_VDN.csv', 'r') as csvfile:
+with open('../csv/liens_redirections_VDN.csv', 'r') as csvfile:
  lecteur = csv.DictReader(csvfile, delimiter = ";")
  for ligne in lecteur:
-  if ligne['Redirections'] == 'https://abonnement.lavoixdunord.fr/faq':
+  if ligne['Redirections'] == 'https://abonnement-stage.lavoixdunord.fr/faq':
    redirection_faq.append(ligne['Redirections'])
    page.append(ligne['Page'])
   else:
@@ -16,7 +16,7 @@ with open('liens_redirections_VDN.csv', 'r') as csvfile:
    redirection.append(ligne['Redirections'])
 
 
-with open('rewrite_rules.txt', 'w', encoding='utf-8') as sortie:
+with open('../csv/rewrite_rules.csv', 'w', encoding='utf-8') as sortie:
     sortie.write("=========Fichier pour la FAQ=========\n")
     for url,redir in zip(page, redirection_faq):
         if url.startswith('espace-abonnement.lavoixdunord.fr/'):

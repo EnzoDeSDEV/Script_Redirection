@@ -1,6 +1,6 @@
 import csv
 
-with open('test.csv', 'r') as csvfile:
+with open('../csv/test.csv', 'r') as csvfile:
     page = []
     redirection= []
     delimiter = ";"
@@ -8,7 +8,7 @@ with open('test.csv', 'r') as csvfile:
     for ligne in lecteur:
            page.append(ligne['Page'])
            redirection.append(ligne['Redirections'])
-    with open('rewrite_rules.txt', 'w', encoding='utf-8') as sortie:
+    with open('../csv/rewrite_rules.csv', 'w', encoding='utf-8') as sortie:
         for url,redir in zip(page, redirection):
                     if url.startswith('espace-abonnement.lavoixdunord.fr/'):
                           url = url[len('espace-abonnement.lavoixdunord.fr'):]
