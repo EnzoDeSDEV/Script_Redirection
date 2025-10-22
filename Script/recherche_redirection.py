@@ -21,7 +21,10 @@ with open ( '../csv/rewrite_rules.csv','r') as f1, \
                 if n.lower() == valeur.lower():
                     doublons.append(valeur)
                     Nredirection.remove(n)
-                    break  # on sort pour éviter de supprimer plusieurs fois
+
+with open ('../csv/rewrite_rules_news.csv', 'w',encoding='utf-8') as sortie:
+    for ligne in Nredirection:
+        sortie.write(ligne + "\n")
 
 print("============Dossier sans doublon============ :\n")
 for n in Nredirection:
@@ -30,4 +33,4 @@ for n in Nredirection:
 print("============Dossier doublon============ :\n")
 for d in doublons:
     print(d)
-print("============Dossier doublon============ :\n")
+print("======================================= :\n")
