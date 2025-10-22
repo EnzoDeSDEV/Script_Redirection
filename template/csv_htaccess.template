@@ -1,0 +1,5 @@
+ici vous aller metttre les rules de votre htaccess 
+ce qui va permettre de faire les recherches de doublon
+
+RewriteRule ^example_de_lien_de_base$ https://abonnement-stage.lavoixdunord.fr/faq [R=307,QSA,L]
+
